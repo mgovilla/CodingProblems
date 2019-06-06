@@ -4,27 +4,28 @@
 #
 #Follow-up: what if you can't use division?
 
+input = [1, 2, 3, 4, 5]
+index = 0
 
 def main():
     print(products(input))
 
 
 def products(list):
-    lookingFor = []
+    global index
+    product = getProductOf(list)
+    output = []
     for i in list:
-        if(contains(i, lookingFor)):
-            return True
-        else:
-            lookingFor.append(sum - i)
+        output.append(product / i)
+        index = index + 1
+    return  output
 
-    return  False
-
-def contains(value, list):
+def getProductOf(list):
+    product = 1
     for v in list:
-        if(v == value):
-            return True
+        product = product * v
     
-    return False
+    return product
 
 
 if __name__ == "__main__":
