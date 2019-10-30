@@ -2,17 +2,16 @@
 You are given an M by N matrix consisting of booleans that represents a board. Each True boolean represents a wall. Each False boolean represents a tile you can walk on.
 Given this matrix, a start coordinate, and an end coordinate, return the minimum number of steps required to reach the end coordinate from the start. 
 If there is no possible path, then return null. You can move up, left, down, and right. You cannot move through walls. You cannot wrap around the edges of the board.
-For example, given the following board:
 """
 board = [[False, False, False, False], 
-         [True, False, False, True],
+         [True, True, False, True],
          [False, False, False, False], 
          [False, False, False, False]]
-         
+
 travelledTo = []
 
 def main():
-    stepsToEnd((3,0), (0,0))
+    stepsToEnd((0,0), (0,0))
 
 done = False
 
@@ -29,7 +28,7 @@ def stepsToEnd(start, end, count=0):
         return
     
     # Step 1: Find the possible movements, do not retrace steps?
-    validMoves = [] # Array of moves IN ORDER
+    validMoves = [] # Array of moves 
 
     # Up one is [m-1][n]
     up = (start[0] - 1, start[1])
