@@ -5,28 +5,25 @@
 #Follow-up: what if you can't use division?
 
 input = [1, 2, 3, 4, 5]
-index = 0
-
+j = 0
 def main():
-    print(products(input))
+    print()
+    
+
 
 
 def products(list):
-    global index
-    product = getProductOf(list)
-    output = []
+    plist = []
+    product = findProduct(list)
+
     for i in list:
-        output.append(product / i)
-        index = index + 1
-    return  output
+        plist[i] = i
 
-def getProductOf(list):
-    product = 1
-    for v in list:
-        product = product * v
-    
-    return product
+    return  plist
 
+def findProduct(list):
+    for i in list:
+        
 
 if __name__ == "__main__":
     main()
