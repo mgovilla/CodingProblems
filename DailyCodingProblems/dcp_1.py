@@ -8,7 +8,6 @@ k = 9
 def main():
     print(sumToK(input, k))
 
-
 def sumToK(list, sum):
     lookingFor = []
     for i in list:
@@ -25,7 +24,6 @@ def contains(value, list):
             return True
     
     return False
-
 
 if __name__ == "__main__":
     main()

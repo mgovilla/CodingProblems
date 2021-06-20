@@ -3,27 +3,15 @@
 #For example, if our input was [1, 2, 3, 4, 5], the expected output would be [120, 60, 40, 30, 24]. If our input was [3, 2, 1], the expected output would be [2, 3, 6].
 #
 #Follow-up: what if you can't use division?
-
+from functools import reduce
 input = [1, 2, 3, 4, 5]
-j = 0
+
 def main():
-    print()
+    print(productsWithDivision(input))
     
-
-
-
-def products(list):
-    plist = []
-    product = findProduct(list)
-
-    for i in list:
-        plist[i] = i
-
-    return  plist
-
-def findProduct(list):
-    for i in list:
-        
+def productsWithDivision(l):
+    prod = reduce(lambda acc, n: acc*n, l)
+    return list(map(lambda v: prod / v, l))
 
 if __name__ == "__main__":
     main()
