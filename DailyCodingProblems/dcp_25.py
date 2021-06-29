@@ -12,13 +12,18 @@ class Node:
         self.next = next
 
 def removeNthLast(l, n):
-    # go through each node
-    # remove the node and save, then if we were wrong, add it back
-    # 1 -> 2 -> 3 -> 4 -> 5 -> 6 -> 7 remove (2nd to last = 6)
-    # 1 -> x -> 3 -> 4 -> 5 -> 6 -> 7 remove (2nd to last = 6)
-    
-    # one pass, constant space
-    # 
+    # go through each node and keep a pointer to the node that was n begind
+
+    count=0
+    temp = to_remove = l
+    while(temp is not None):
+        if(count >= n+1):
+            to_remove = to_remove.next
+       
+        count += 1
+        temp = temp.next
+
+    to_remove.next = to_remove.next.next
 
     return l
 
@@ -31,5 +36,5 @@ def nodeAsList(l):
     return out
 
 if __name__ == "__main__":
-    test_1 = Node(1, Node(2, Node(3)))
+    test_1 = Node(1, Node(2, Node(3, Node(4, Node(5)))))
     print(nodeAsList(removeNthLast(test_1, 2)))
